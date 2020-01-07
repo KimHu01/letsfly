@@ -3,19 +3,18 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     
     <!-- 引入配置jedis pool文件 -->
-    <import resource="classpath*:META-INF/jedis/abel-redis-jedis.xml"/>
+    <import resource="classpath*:META-INF/jedis/letsfly-redis-jedis.xml"/>
     
-    <!-- jedisCluster -->
-    <bean id="jedisCluster" class="com.abel.redis.jedis.factory.JedisClusterFactoryBean">
+    <!-- redis client -->
+    <bean id="jedisClientPool" class="com.letsfly.redis.jedis.factory.JedisClientPoolFactoryBean">
         <property name="poolConfig" ref="jedisGenericObjectPoolConfig"/>
         <property name="addresses" value="${redis.jedis.addresses}"/>
         <property name="timeout" value="${redis.jedis.timeout}"/>
-        <property name="maxRedirections" value="${redis.jedis.maxRedirections}"/>
         <property name="password" value="${redis.jedis.password}"/>
     </bean>
     
-    <!-- 自定义jedisCluster -->
-    <bean id="jedisClusterSingle" class="com.abel.redis.jedis.JedisClusterSingle">
-        <property name="jedisCluster" ref="jedisCluster"/>
+    <!-- 自定义jedisClient -->
+    <bean id="jedisClientSingle" class="com.letsfly.redis.jedis.JedisClientSingle">
+        <property name="jedisPool" ref="jedisClientPool"/>
     </bean>
 </beans>

@@ -3,10 +3,10 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     
     <!-- 引入配置jedis pool文件 -->
-    <import resource="classpath*:META-INF/jedis/abel-redis-jedis.xml"/>
+    <import resource="classpath*:META-INF/jedis/letsfly-redis-jedis.xml"/>
     
     <!-- jedisSentinelPool -->
-    <bean id="jedisSentinelPool" class="com.abel.redis.jedis.factory.JedisSentinelPoolFactoryBean">
+    <bean id="jedisSentinelPool" class="com.letsfly.redis.jedis.factory.JedisSentinelPoolFactoryBean">
         <property name="poolConfig" ref="jedisGenericObjectPoolConfig"/>
         <property name="addresses" value="${redis.jedis.addresses}"/>
         <property name="timeout" value="${redis.jedis.timeout}"/>
@@ -15,7 +15,7 @@
     </bean>
     
     <!-- 自定义jedisSentinelSingle -->
-    <bean id="jedisSentinelSingle" class="com.abel.redis.jedis.JedisSentinelSingle">
+    <bean id="jedisSentinelSingle" class="com.letsfly.redis.jedis.JedisSentinelSingle">
         <property name="jedisSentinelPool" ref="jedisSentinelPool"/>
     </bean>
 </beans>
