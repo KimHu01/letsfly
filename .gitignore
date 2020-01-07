@@ -1,0 +1,38 @@
+/target/
+*.jar
+*.war
+*.zip
+*.tar
+*.tar.gz
+
+bin/
+
+*rebel.xml
+*rebel.xml.bak
+
+# eclipse ignore
+.settings/
+.project
+.classpath
+.metadata
+
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+
+# temp ignore
+logs/
+*.doc
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+# system ignore
+.DS_Store
+Thumbs.db
+# Servers
+Servers/
