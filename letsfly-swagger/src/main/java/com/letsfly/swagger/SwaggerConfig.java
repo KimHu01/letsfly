@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -19,7 +20,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @version 1.0
  */
 @Configuration
-@ComponentScan("com.**.controller")
+@ComponentScan("com.**")
+@EnableWebMvc
 @EnableSwagger2
 public class SwaggerConfig {
     
