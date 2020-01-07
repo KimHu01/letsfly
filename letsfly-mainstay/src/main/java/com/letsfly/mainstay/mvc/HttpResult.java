@@ -127,6 +127,6 @@ public final class HttpResult<T> implements Serializable {
 	
 	@Override
 	public String toString() {
-		return JSONObject.toJSONString(this, SerializerFeature.WriteNonStringValueAsString);
+		return JSONObject.toJSONString(this, SerializerFeature.WriteNonStringValueAsString, SerializerFeature.WriteDateUseDateFormat);
 	}
 }
