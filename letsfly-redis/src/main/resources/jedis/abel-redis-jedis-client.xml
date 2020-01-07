@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!-- 引入配置jedis pool文件 -->
+    <import resource="classpath*:META-INF/jedis/abel-redis-jedis.xml"/>
+    
+    <!-- redis client -->
+    <bean id="jedisClientPool" class="com.abel.redis.jedis.factory.JedisClientPoolFactoryBean">
+        <property name="poolConfig" ref="jedisGenericObjectPoolConfig"/>
+        <property name="addresses" value="${redis.jedis.addresses}"/>
+        <property name="timeout" value="${redis.jedis.timeout}"/>
+        <property name="password" value="${redis.jedis.password}"/>
+    </bean>
+    
+    <!-- 自定义jedisClient -->
+    <bean id="jedisClientSingle" class="com.abel.redis.jedis.JedisClientSingle">
+        <property name="jedisPool" ref="jedisClientPool"/>
+    </bean>
+</beans>

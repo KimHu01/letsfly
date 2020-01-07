@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!-- 引入配置jedis pool文件 -->
+    <import resource="classpath*:META-INF/jedis/abel-redis-jedis.xml"/>
+    
+    <!-- jedisSentinelPool -->
+    <bean id="jedisSentinelPool" class="com.abel.redis.jedis.factory.JedisSentinelPoolFactoryBean">
+        <property name="poolConfig" ref="jedisGenericObjectPoolConfig"/>
+        <property name="addresses" value="${redis.jedis.addresses}"/>
+        <property name="timeout" value="${redis.jedis.timeout}"/>
+        <property name="password" value="${redis.jedis.password}"/>
+        <property name="masterName" value="${redis.jedis.masterName}"/>
+    </bean>
+    
+    <!-- 自定义jedisSentinelSingle -->
+    <bean id="jedisSentinelSingle" class="com.abel.redis.jedis.JedisSentinelSingle">
+        <property name="jedisSentinelPool" ref="jedisSentinelPool"/>
+    </bean>
+</beans>

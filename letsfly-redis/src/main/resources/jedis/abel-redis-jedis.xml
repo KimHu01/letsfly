@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!-- jedis pool config -->
+    <bean name="jedisGenericObjectPoolConfig" class="org.apache.commons.pool2.impl.GenericObjectPoolConfig">
+        <property name="maxIdle"                            value="${redis.jedis.maxIdle}"/>
+        <property name="minIdle"                            value="${redis.jedis.minIdle}"/>
+        <property name="maxTotal"                            value="${redis.jedis.maxTotal}"/>
+        <property name="maxWaitMillis"                        value="${redis.jedis.maxWaitMillis}"/>
+        
+        <property name="testWhileIdle"                        value="${redis.jedis.testWhileIdle}"/>
+        <property name="testOnBorrow"                        value="${redis.jedis.testOnBorrow}"/>
+        <property name="testOnReturn"                        value="${redis.jedis.testOnReturn}"/>
+        <property name="numTestsPerEvictionRun"                value="${redis.jedis.numTestsPerEvictionRun}"/>
+        <property name="softMinEvictableIdleTimeMillis"        value="${redis.jedis.softMinEvictableIdleTimeMillis}"/>
+        
+        <property name="timeBetweenEvictionRunsMillis"        value="${redis.jedis.timeBetweenEvictionRunsMillis}"/>
+        <property name="minEvictableIdleTimeMillis"            value="${redis.jedis.minEvictableIdleTimeMillis}"/>
+        <property name="blockWhenExhausted"                    value="${redis.jedis.blockWhenExhausted}"/>
+    </bean>
+</beans>
