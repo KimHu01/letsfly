@@ -23,8 +23,8 @@ public final class SnowFlake {
     /** 锁 */
     private static final Object lock = new Object();
     
-    /** 开始时间截 (2019-01-01 00:00:00) */
-    private static final long twepoch = 1546272000000L;
+    /** 开始时间截 (2020-01-01 00:00:00) */
+    private static final long twepoch = 1577808000000L;
     
     /** 比特位数:数据中心Id */
     private static final long dataCenterIdBits = 4L;
