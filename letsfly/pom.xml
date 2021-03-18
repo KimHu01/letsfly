@@ -46,7 +46,7 @@
         <shiro.version>1.4.1</shiro.version>
         <netty.version>4.1.43.Final</netty.version>
         
-        <elasticsearch.version>7.4.2</elasticsearch.version>
+        <elasticsearch.version>7.11.2</elasticsearch.version>
         <jeesuite.version>1.3.0</jeesuite.version>
         <swagger.version>2.9.2</swagger.version>
     </properties>
