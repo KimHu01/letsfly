@@ -43,7 +43,7 @@
         <spring-data.version>2.2.1.RELEASE</spring-data.version>
         <apache-components.version>4.5.10</apache-components.version>
         <poi.version>4.1.1</poi.version>
-        <shiro.version>1.4.1</shiro.version>
+        <shiro.version>1.6.0</shiro.version>
         <netty.version>4.1.43.Final</netty.version>
         
         <elasticsearch.version>7.4.2</elasticsearch.version>
