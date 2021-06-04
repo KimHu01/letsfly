@@ -41,7 +41,7 @@
         
         <spring.version>5.2.1.RELEASE</spring.version>
         <spring-data.version>2.2.1.RELEASE</spring-data.version>
-        <apache-components.version>4.5.10</apache-components.version>
+        <apache-components.version>4.5.13</apache-components.version>
         <poi.version>4.1.1</poi.version>
         <shiro.version>1.4.1</shiro.version>
         <netty.version>4.1.43.Final</netty.version>
